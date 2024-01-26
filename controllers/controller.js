@@ -22,10 +22,10 @@ export const saveVote = async (req, res) => {
 export const getStats = async (req, res) => {
 	try {
 		const stock = req.params.ticker;
-		const Votes = await Vote.find({ ticker: stock });
 		const STVotes = [];
 		const MTVotes = [];
 		const LTVotes = [];
+		const Votes = await Vote.find({ ticker: stock });
 
 		Votes.map((vote) => {
 			STVotes.push(vote.targetPriceST);
